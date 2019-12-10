@@ -19,17 +19,25 @@ function addTodo(taskDesc) {
     unordedList.appendChild(listEl)
     listEl.innerText = taskDesc
     let deleteButton = document.createElement("button")
+    let editButton = document.createElement("button")
     listEl.appendChild(deleteButton)
+    listEl.appendChild(editButton)
     deleteButton.innerHTML = "Delete Task"
+    editButton.innerHTML = "Edit Task"
     deleteButton.addEventListener("click", deleteTask)
+    editButton.addEventListener("click", editTask)
     event.target.reset()
 }
 
 
 function deleteTask(event){
   let deleteTask = event.path[1]
-  debugger
   deleteTask.style.display = 'none'; 
+}
+
+function editTask(event) {
+  let taskText = event.path[1].firstChild.data
+  taskText = 
 }
 
 
