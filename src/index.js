@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-function createNewTask(event) {
+function createNewTask(event) { 
    event.preventDefault() 
    console.log("You are in the createnew task method")
    let taskDesc = document.getElementById("new-task-description").value
@@ -17,9 +17,6 @@ function addTodo(taskDesc) {
     let listEl = document.createElement("li")
     let unordedList = document.querySelector("ul") 
     unordedList.appendChild(listEl)
-    // var uniqueNumber = new Date().getTime();
-    // listEl.id = `task${uniqueNumber}`; 
-    listEl.id = 'task1'; 
     listEl.innerText = taskDesc
     let deleteButton = document.createElement("button")
     listEl.appendChild(deleteButton)
@@ -29,9 +26,11 @@ function addTodo(taskDesc) {
 }
 
 
-function deleteTask(){
-  let deleteTask = document.getElementById("task1") 
-  deleteTask.style.display = 'none';
+function deleteTask(event){
+  let deleteTask = event.path[1]
+  debugger
+  deleteTask.style.display = 'none'; 
 }
+
 
 
